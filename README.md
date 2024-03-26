@@ -1,8 +1,53 @@
-# React + Vite
+# アプリ概要
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- React と Firebase を用いた認証機能付きのブログです。
 
-Currently, two official plugins are available:
+# 技術スタック
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React18
+- javascript
+
+# ビルドツール
+
+- Vite
+
+# コード整形
+
+- eslint (Guide: airbnb)
+- prettier
+
+# 起動方法
+
+必要なパッケージを install する
+
+```
+npm ci
+```
+
+起動する。
+
+```
+npm start
+```
+
+# ブランチ運用ルール
+
+- main: リリースブランチ
+  - develop: 開発ブランチ
+    - feature: 機能開発ブランチ
+  - hotfix: 緊急修正ブランチ
+
+# マージ運用ルール
+
+マージコミットは作るようにする
+
+# コミットメッセージ
+
+- feat: 機能追加
+- fix: バグ修正
+- docs: ドキュメントのみ変更
+- style: 空白、フォーマット、セミコロンなどの修正のみ
+- refactor: 仕様に影響を与えないコード修正
+- perf: パフォーマンス向上
+- test: テスト関連
+- chore: ビルドプロセス、補助ツール、ライブラリなどの補助ツールや補助ライブラリの変更
