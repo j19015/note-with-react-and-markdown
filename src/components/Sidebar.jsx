@@ -1,12 +1,15 @@
 import './Sidebar.css';
 import React from 'react';
 
-function Sidebar() {
+// eslint-disable-next-line react/prop-types
+function Sidebar({ onAddNote }) {
   return (
     <div className="app-sidebar">
       <div className="app-sidebar-header">
         <h1>ノート</h1>
-        <button type="button">追加</button>
+        <button type="button" onClick={onAddNote}>
+          追加
+        </button>
       </div>
       <div className="app-sidebar-notes">
         <div className="app-sidebar-note">
