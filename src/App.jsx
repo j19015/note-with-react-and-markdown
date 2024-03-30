@@ -8,7 +8,7 @@ function App() {
 
   const onAddNote = () => {
     const newNote = {
-      id: Math.random().toString(36).substr(2, 9),
+      id: 1,
       title: '新しいノート',
       content: '新しいノートの内容です。',
       modDate: Date.now(),
@@ -17,7 +17,7 @@ function App() {
   };
   return (
     <div className="App">
-      <Sidebar onAddNote={onAddNote} />
+      <Sidebar onAddNote={onAddNote} notes={notes} />
       <Main />
     </div>
   );
