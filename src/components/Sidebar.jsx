@@ -14,6 +14,9 @@ function Sidebar({
   // eslint-disable-next-line react/prop-types
   setActiveNote,
 }) {
+  // eslint-disable-next-line react/prop-types
+  const sortedNotes = notes.sort((a, b) => b.modDate - a.modDate);
+
   return (
     <div className="app-sidebar">
       <div className="app-sidebar-header">
@@ -25,7 +28,7 @@ function Sidebar({
       <div className="app-sidebar-notes">
         {
           // eslint-disable-next-line react/prop-types
-          notes.map((note) => (
+          sortedNotes.map((note) => (
             // eslint-disable-next-line max-len
             // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
             <div
