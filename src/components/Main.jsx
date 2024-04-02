@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import './Main.css';
 import React from 'react';
-
+// eslint-disable-next-line import/no-extraneous-dependencies
+import Markdown from 'react-markdown';
 // eslint-disable-next-line react/prop-types
 function Main({ activeNote, onUpdateNote }) {
   const onEditNote = (key, value) => {
@@ -34,7 +35,7 @@ function Main({ activeNote, onUpdateNote }) {
       </div>
       <div className="app-main-note-preview">
         <h1 className="preview-title">{activeNote.title}</h1>
-        <div className="markdown-preview">{activeNote.content}</div>
+        <Markdown className="markdown-preview">{activeNote.content}</Markdown>
       </div>
     </div>
   );
