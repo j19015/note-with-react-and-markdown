@@ -24,7 +24,7 @@ function App() {
     setNotes(newNotes);
   };
 
-  console.log(activeNote);
+  const getActiveNote = notes.find((note) => note.id === activeNote);
 
   return (
     <div className="App">
@@ -35,7 +35,7 @@ function App() {
         activeNote={activeNote}
         setActiveNote={setActiveNote}
       />
-      <Main />
+      <Main activeNote={getActiveNote} />
     </div>
   );
 }
