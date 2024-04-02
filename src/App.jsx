@@ -9,7 +9,7 @@ function App() {
   const [notes, setNotes] = useState(
     localStorage.getItem('notes') ? JSON.parse(localStorage.getItem('notes')) : [],
   );
-  const [activeNote, setActiveNote] = useState(false);
+  const [activeNote, setActiveNote] = useState(notes[0] ? notes[0].id : null);
 
   useEffect(() => {
     // ローカルストレージにnotesを保存
