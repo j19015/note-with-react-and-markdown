@@ -2,7 +2,18 @@ import './Sidebar.css';
 import React from 'react';
 
 // eslint-disable-next-line react/prop-types
-function Sidebar({ onAddNote, notes, onDeleteNote }) {
+function Sidebar({
+  // eslint-disable-next-line react/prop-types
+  onAddNote,
+  // eslint-disable-next-line react/prop-types
+  notes,
+  // eslint-disable-next-line react/prop-types
+  onDeleteNote,
+  // eslint-disable-next-line react/prop-types
+  activeNote,
+  // eslint-disable-next-line react/prop-types
+  setActiveNote,
+}) {
   return (
     <div className="app-sidebar">
       <div className="app-sidebar-header">
@@ -15,7 +26,13 @@ function Sidebar({ onAddNote, notes, onDeleteNote }) {
         {
           // eslint-disable-next-line react/prop-types
           notes.map((note) => (
-            <div className="app-sidebar-note" key={note.id}>
+            // eslint-disable-next-line max-len
+            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+            <div
+              className={`app-sidebar-not ${note.id === activeNote && 'active'}`}
+              key={note.id}
+              onClick={() => setActiveNote(note.id)}
+            >
               <div className="sidebar-note-title">
                 <strong>{note.title}</strong>
                 <button type="button" onClick={() => onDeleteNote(note.id)}>
